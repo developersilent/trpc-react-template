@@ -18,8 +18,10 @@
   },
   "dependencies": {
     "@trpc/server": "^11.7.1",
+    "@vercel/node": "^5.5.3",
     "cors": "^2.8.5",
     "express": "^5.1.0",
+    "serverless-http": "^4.0.0",
     "superjson": "^2.2.5",
     "zod": "^4.1.12"
   }

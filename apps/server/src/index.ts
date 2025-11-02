@@ -4,6 +4,8 @@ import { createExpressMiddleware } from "@trpc/server/adapters/express";
 import { appRoutes } from "./routes";
 import { trpcContext } from "./utils/trpc";
 import { PORT } from "./constants/env";
+import serverless from "serverless-http";
+
 
 const server = express();
 
@@ -28,6 +30,10 @@ server.get("/", (_, res) => {
   });
 });
 
-server.listen(PORT, () => {
-  console.log("Server is running ...", PORT);
-});
+export const handler = serverless(server);
+
+if (process.env.NODE_ENV !== "production") {
+  server.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+  });
+}
