@@ -10,7 +10,7 @@ const server = express();
 server.use(express.json());
 server.use(
   cors({
-    origin: "*",
+    origin: "https://trpc-react-template-web.vercel.app",
   }),
 );
 
