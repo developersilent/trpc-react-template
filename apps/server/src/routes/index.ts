@@ -3,8 +3,5 @@ import { testRoute } from "./test";
 
 // All trpc routes connect here
 export const appRoutes = createTRPCRoute({
-  test: testRoute
-})
-
-
-
+  test: testRoute,
+});

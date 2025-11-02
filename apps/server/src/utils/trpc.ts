@@ -3,12 +3,12 @@ import type { CreateExpressContextOptions } from "@trpc/server/adapters/express"
 import superjson from "superjson";
 
 // create the express context;
-export async function trpcContext({req,res}: CreateExpressContextOptions){
-  return {req, res};
+export async function trpcContext({ req, res }: CreateExpressContextOptions) {
+  return { req, res };
 }
 
 // Context type
-type ContextType = Awaited<typeof trpcContext>
+type ContextType = Awaited<typeof trpcContext>;
 
 // init the TRPC with context
 const init = initTRPC.context<ContextType>().create({
@@ -18,4 +18,3 @@ const init = initTRPC.context<ContextType>().create({
 // export main function
 export const createTRPCRoute = init.router;
 export const publicProcedure = init.procedure;
-

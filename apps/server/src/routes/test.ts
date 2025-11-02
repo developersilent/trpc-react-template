@@ -4,7 +4,7 @@ import { createTRPCRoute, publicProcedure } from "../utils/trpc";
 export const testRoute = createTRPCRoute({
   sayHi: publicProcedure.query(() => {
     return {
-      msg: "TRPC Server Response !!"
-    }
-  })
-})
+      msg: "TRPC Server Response !!",
+    };
+  }),
+});
