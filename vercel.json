@@ -9,6 +9,5 @@
                 "distDir": "apps/web/dist"
             }
         }
-    ],
-    "outputDirectory": "apps/web/dist"
+    ]
 }
